@@ -1,0 +1,26 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Matthias Larsen
+	email = mlarsen@gammamedia.org
+[push]
+	default = tracking
+[core]
+	fileMode = false
+	whitespace = trailing-space,space-before-tab
+[filter "tabspace"]
+	smudge = unexpand --tabs=4 --first-only
+	clean = expand --tabs=4 --initial
+[color]
+	ui = auto
+[advice]
+	statusHints = false
+[diff]
+	renames = copies
+[branch]
+	autosetupmerge = true
+[rerere]
+	enabled = true
+[merge]
+	stat = true
+[alias]
+	permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
